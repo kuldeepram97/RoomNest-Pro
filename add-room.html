@@ -28,8 +28,23 @@
 
 <button onclick="addRoom()">Add Room</button>
 </div>
-<script type="module" src="firebase.js"></script>
-   <script type="module">
+<script>
+function addRoom(){
+
+let owner = document.getElementById("owner").value;
+let location = document.getElementById("location").value;
+let rent = document.getElementById("rent").value;
+let mobile = document.getElementById("mobile").value;
+
+if(owner=="" || location=="" || rent=="" || mobile==""){
+    alert("Please fill all details");
+}
+else{
+    alert("Room Added Successfully");
+}
+
+}
+</script>
 import { storage, db } from "./firebase.js";
 import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
